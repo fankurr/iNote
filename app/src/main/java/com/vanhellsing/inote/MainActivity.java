@@ -72,9 +72,6 @@ public class MainActivity extends AppCompatActivity {
     // constant code for runtime permissions
     private static final int PERMISSION_REQUEST_CODE = 200;
 
-//    private AppBarConfiguration appBarConfiguration;
-//    private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,15 +80,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         SQLite = new DbHelper(getApplicationContext());
-
-//        binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//
-//        setSupportActionBar(binding.toolbar);
-//
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         listView = (ListView) findViewById(R.id.list_view);
@@ -142,8 +130,6 @@ public class MainActivity extends AppCompatActivity {
                                 // calling method to
                                 // generate our PDF file.
                                 generatePDF(title.toString(), desc.toString());
-//                                generatePDF(itemList.getText().toString());
-
                                 break;
                         }
                     }
@@ -226,24 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTextLayout.draw(canvas);
         canvas.restore();
-//**
-
-//        TextPaint mTextPaint = new TextPaint();
-//        mTextPaint.setColor(Color.BLACK);
-//        canvas.drawText(title, 37, 50, mTextPaint);
-//        canvas.drawText(desc, 12, 60, 37, 65, mTextPaint);
-//        canvas.drawText(desc, 37, 70, paint);
-        //canvas.drawt
-        // finish the page
         document.finishPage(page);
-// draw text on the graphics object of the page
-//        // Create Page 2
-//        pageInfo = new PdfDocument.PageInfo.Builder(300, 600, 2).create();
-//        page = document.startPage(pageInfo);
-//        canvas = page.getCanvas();
-//        paint = new Paint();
-//        paint.setColor(Color.BLUE);
-//        document.finishPage(page);
 
         // write the document content
         String directory_path = Environment.getExternalStorageDirectory().getPath() + "/iNote/";
